@@ -1,0 +1,54 @@
+{
+  "projectName": "SalesLogix Mobile DTS",
+  "licenseText": "",
+  "deployDir": "deploy/",
+  "pkgs": [
+    {
+      "name": "Mobile DTS",
+      "file": "content/javascript/argos-dts.js",
+      "isDebug": true,
+      "fileIncludes": [
+      {
+        "text": "Detail.js",
+        "path": "../src/Views/Defect"
+      },
+      {
+        "text": "Edit.js",
+        "path": "../src/Views/Defect"
+      },
+      {
+        "text": "List.js",
+        "path": "../src/Views/Defect"
+      },
+      {
+        "text": "Projects.js",
+        "path": "../src/Views"
+      },
+      {
+        "text": "Builds.js",
+        "path": "../src/Views"
+      },
+      {
+        "text": "ComponentAreaCategoryIssueLookup.js",
+        "path": "../src/Views"
+      },
+      {
+        "text": "ApplicationModule.js",
+        "path": "../src/"
+      }
+      ]
+    }
+  ],
+  "resources": [
+    {
+      "src": "../content",
+      "dest": "content",
+      "filters": ".*(\\.css|\\.jpg|\\.png|\\.gif)"
+    },
+    {
+      "src": "../configuration/dts",
+      "dest": "configuration/dts",
+      "filters": ".*\\.js"
+    }
+  ]
+}

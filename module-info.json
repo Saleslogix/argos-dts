@@ -1,0 +1,9 @@
+{
+    "name": "dts",
+    "displayName": "DTS Customizations",
+    "description": "",
+    "majorVersion": 1,
+    "minorVersion": 1,
+    "buildNumber": 0,
+    "targetProduct": "saleslogix"
+}
