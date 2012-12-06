@@ -1,12 +1,14 @@
 define('Mobile/DTS/Views/ComponentAreaCategoryIssueLookup', [
     'dojo/_base/declare',
-    'Sage/Platform/Mobile/List'
+    'argos/List',
+    'argos/_SDataListMixin'
 ], function(
     declare,
-    List
+    List,
+    _SDataListMixin
 ) {
 
-    return declare('Mobile.Mobile.Views.ComponentAreaCategoryIssueLookup', [List], {
+    return declare('Mobile.Mobile.Views.ComponentAreaCategoryIssueLookup', [List, _SDataListMixin], {
         //Templates
         itemTemplate: new Simplate([
             '<h3>{%: $.$descriptor %}</h3>'

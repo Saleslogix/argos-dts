@@ -9,6 +9,10 @@
       "isDebug": true,
       "fileIncludes": [
       {
+        "text": "ApplicationViews.js",
+        "path": "../src/"
+      },
+      {
         "text": "Detail.js",
         "path": "../src/Views/Defect"
       },

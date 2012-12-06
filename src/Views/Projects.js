@@ -1,14 +1,16 @@
 define('Mobile/DTS/Views/Projects', [
     'dojo/_base/declare',
     'dojo/string',
-    'Sage/Platform/Mobile/List'
+    'argos/List',
+    'argos/_SDataListMixin'
 ], function(
     declare,
     string,
-    List
+    List,
+    _SDataListMixin
 ) {
 
-    return declare('Mobile.DTS.Views.Projects', [List], {
+    return declare('Mobile.DTS.Views.Projects', [List, _SDataListMixin], {
         //Templates
         itemTemplate: new Simplate([
             '<h3>{%: $.Project %}</h3>'

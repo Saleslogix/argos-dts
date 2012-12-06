@@ -4,8 +4,9 @@ define('Mobile/DTS/Views/Defect/Edit', [
     'dojo/string',
     'Mobile/SalesLogix/Format',
     'Mobile/SalesLogix/Validator',
-    'Sage/Platform/Mobile/ErrorManager',
-    'Sage/Platform/Mobile/Edit'
+    'argos/ErrorManager',
+    'argos/Edit',
+    'argos/_SDataEditMixin'
 ], function(
     declare,
     lang,
@@ -13,10 +14,11 @@ define('Mobile/DTS/Views/Defect/Edit', [
     format,
     validator,
     ErrorManager,
-    Edit
+    Edit,
+    _SDataEditMixin
 ) {
 
-    return declare('Mobile.DTS.Views.Defect.Edit', [Edit], {
+    return declare('Mobile.DTS.Views.Defect.Edit', [Edit, _SDataEditMixin], {
         //Localization
         areaText: 'area',
         assignedDateText: 'assigned date',

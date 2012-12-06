@@ -2,14 +2,16 @@ define('Mobile/DTS/Views/Defect/List', [
     'dojo/_base/declare',
     'dojo/string',
     'Mobile/SalesLogix/Action',
-    'Sage/Platform/Mobile/List'
+    'argos/List',
+    'argos/_SDataListMixin'
 ], function(
     declare,
     string,
     action,
-    List
+    List,
+    _SDataListMixin
 ) {
-    return declare('Mobile.DTS.Views.Defect.List', [List], {
+    return declare('Mobile.DTS.Views.Defect.List', [List, _SDataListMixin], {
         //Templates
         itemTemplate: new Simplate([
             '<h3>{%: $.$descriptor %} <span class="p-defect-subject"> {%: $.Subject %} </span></h3>',
@@ -23,7 +25,6 @@ define('Mobile/DTS/Views/Defect/List', [
         noVersionText: 'No VersionTBF',
 
         //View Properties
-        expose: true,
         detailView: 'defect_detail',
         icon: 'content/images/icons/Defect_24x24.gif',
         id: 'defect_list',
@@ -41,8 +42,6 @@ define('Mobile/DTS/Views/Defect/List', [
             'AssignedTo'
         ],
         resourceKind: 'defects',
-        allowSelection: true,
-        enableActions: true,
         hashTagQueries: {
             // Defect Type 
             'defect': 'DefectType eq "Defect"',
@@ -78,7 +77,6 @@ define('Mobile/DTS/Views/Defect/List', [
                 }]
             );
         },
-
         formatSearchQuery: function(searchQuery) {
             return string.substitute(
                 'DefectNumber like "%${0}%" or upper(Subject) like "${0}%" or VerTBF like "${0}"',

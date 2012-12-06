@@ -1,7 +1,7 @@
-define('configuration/dts/development', ['configuration/development', 'Mobile/DTS/ApplicationModule'], function(baseConfiguration) {
+define('configuration/dts/development', ['configuration/development', 'Mobile/DTS/ApplicationModule'], function(baseConfiguration, ApplicationModule) {
     return mergeConfiguration(baseConfiguration, {
         modules: [
-            new Mobile.DTS.ApplicationModule()
+            new ApplicationModule()
         ],
         connections: {
             'crm': {

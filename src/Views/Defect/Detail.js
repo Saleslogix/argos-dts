@@ -4,9 +4,10 @@ define('Mobile/DTS/Views/Defect/Detail', [
     'dojo/query',
     'dojo/dom-class',
     'Mobile/SalesLogix/Format',
-    'Sage/Platform/Mobile/ErrorManager',
-    'Sage/Platform/Mobile/Detail',
-    'dojo/NodeList-manipulate'
+    'argos/ErrorManager',
+    'argos/Detail',
+    'dojo/NodeList-manipulate',
+    'argos/_SDataDetailMixin'
 ], function(
     declare,
     lang,
@@ -14,10 +15,12 @@ define('Mobile/DTS/Views/Defect/Detail', [
     domClass,
     format,
     ErrorManager,
-    Detail
+    Detail,
+    nodeListManipulate,
+    _SDataDetailMixin
 ) {
 
-    return declare('Mobile.DTS.Views.Defect.Detail', [Detail], {
+    return declare('Mobile.DTS.Views.Defect.Detail', [Detail, _SDataDetailMixin], {
         //Localization
         areaText: 'area',
         assignedDateText: 'assigned date',
