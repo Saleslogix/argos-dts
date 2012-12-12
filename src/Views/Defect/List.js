@@ -3,13 +3,15 @@ define('Mobile/DTS/Views/Defect/List', [
     'dojo/string',
     'Mobile/SalesLogix/Action',
     'argos/List',
-    'argos/_SDataListMixin'
+    'argos/_SDataListMixin',
+    'argos!scene'
 ], function(
     declare,
     string,
     action,
     List,
-    _SDataListMixin
+    _SDataListMixin,
+    scene
 ) {
     return declare('Mobile.DTS.Views.Defect.List', [List, _SDataListMixin], {
         //Templates
@@ -76,6 +78,22 @@ define('Mobile/DTS/Views/Defect/List', [
                     action: 'navigateToEditView'
                 }]
             );
+        },
+        createToolLayout: function() {
+            var tools = this.inherited(arguments);
+            if (tools && tools.top && tools.top.length < 2) {
+                tools.top.push({
+                   id: 'charts',
+                   label: 'Charts',
+                   action: 'navigateToChartView'
+                });
+            }
+
+            return tools;
+        },
+        chartView: 'chart_defect_list',
+        navigateToChartView: function(action, selection) {
+            scene().showView(this.chartView);
         },
         formatSearchQuery: function(searchQuery) {
             return string.substitute(

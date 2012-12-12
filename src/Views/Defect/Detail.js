@@ -7,7 +7,8 @@ define('Mobile/DTS/Views/Defect/Detail', [
     'argos/ErrorManager',
     'argos/Detail',
     'dojo/NodeList-manipulate',
-    'argos/_SDataDetailMixin'
+    'argos/_SDataDetailMixin',
+    './Charts/DefectsPerProject'
 ], function(
     declare,
     lang,
@@ -17,7 +18,8 @@ define('Mobile/DTS/Views/Defect/Detail', [
     ErrorManager,
     Detail,
     nodeListManipulate,
-    _SDataDetailMixin
+    _SDataDetailMixin,
+    ChartDefectsPerProject
 ) {
 
     return declare('Mobile.DTS.Views.Defect.Detail', [Detail, _SDataDetailMixin], {
@@ -167,23 +169,24 @@ define('Mobile/DTS/Views/Defect/Detail', [
                 title: this.moreDetailsText,
                 name: 'MoreDetailsSection',
                 collapsed: true,
-                children: [{
-                    label: this.descriptionText,
-                    name: 'Description',
-                    property: 'Description'
-                },{
-                    label: this.solutionText,
-                    name: 'Solution',
-                    property: 'Solution'
-                },{
-                    label: this.stepsText,
-                    name: 'Steps',
-                    property: 'Steps'
-                },{
-                    label: this.workaroundText,
-                    name: 'Workaround',
-                    property: 'Workaround'
-                }
+                children: [
+                    {
+                        label: this.descriptionText,
+                        name: 'Description',
+                        property: 'Description'
+                    },{
+                        label: this.solutionText,
+                        name: 'Solution',
+                        property: 'Solution'
+                    },{
+                        label: this.stepsText,
+                        name: 'Steps',
+                        property: 'Steps'
+                    },{
+                        label: this.workaroundText,
+                        name: 'Workaround',
+                        property: 'Workaround'
+                    }
                 ]
             }]);
         }

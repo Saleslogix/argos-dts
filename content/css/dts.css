@@ -1,1 +1,8 @@
 .quick-nav-item[data-view="defect_list"] > button > div { background-image: url(../images/icons/Defect_24x24.gif); }
+.tool-button[data-command="charts"] > div { background-image: url(../images/icons/dashboard_sales_24x24.png); }
+/*.tool-button > div > img { position: relative; top: 5px; }*/
+.chart-legend
+{
+    width: 100%;
+    height: 100px;
+}
